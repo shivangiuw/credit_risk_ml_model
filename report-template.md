@@ -62,40 +62,19 @@ The analysis and the classification will be done first using logistics regressio
 2. confusion matrix 
 3. classification report
 
-## Evaluation metrics:
-
-`Confusion Matrix`
-
-
-
-
-`accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)`
-(The accuracy measures how often the model was correct.)
-
-`precision = TPs ÷ (TPs + FPs)`
-(The precision, also known as the positive predictive value (PPV), measures how confident we are that the model correctly made the positive predictions.)
-
-`recall = TPs / (TPs + FNs)`
-(The recall measures the number of actually fraudulent transactions that the model correctly classified as fraudulent.)
-
-`F1 = 2 × (precision × recall) ÷ (precision + recall)`
-(F1 Score is the weighted average of Precision and Recall.)
-
-
-
 
 ## Results
 
-* Machine Learning Model 1:
+### * Machine Learning Model 1:
 
-  * Balanced accuracy score:
+ * Balanced accuracy score:
     0.9520479254722232
     
-  * Confusion Matrix:
-       [18663,   102],
-       [   56,   563]
+ * Confusion Matrix: 
+     18663,   102
+        56,   563
 
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+ * Description of Model 1 Accuracy, Precision, and Recall scores.
 
                    pre       rec       spe        f1       geo       iba       sup
 
@@ -104,16 +83,15 @@ The analysis and the classification will be done first using logistics regressio
 
 avg / total       0.99      0.99      0.91      0.99      0.95      0.91     19384
 
-* Machine Learning Model 2:
+### * Machine Learning Model 2:
   
-   * Balanced accuracy score:
+ * Balanced accuracy score:
      0.9936781215845847
  
-   * Confusion Matrix:
-       [18649,   116],
-       [    4,   615]
-
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+ * Confusion Matrix:
+       18649,   116
+           4,   615
+ * Description of Model 2 Accuracy, Precision, and Recall scores.
   
                    pre       rec       spe        f1       geo       iba       sup
 
@@ -124,6 +102,12 @@ avg / total       0.99      0.99      0.99      0.99      0.99      0.99     193
 
 ## Evaluation metrics:
 
+` Balanced accuracy score`: Balanced accuracy is a metric that one can use when evaluating how good a binary classifier is. It is especially useful when the classes are imbalanced, i.e. one of the two classes appears a lot more often than the other.
+
+
+`Confusion Matrix`
+
+
 `accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)`
 (The accuracy measures how often the model was correct.)
 
@@ -135,7 +119,6 @@ avg / total       0.99      0.99      0.99      0.99      0.99      0.99     193
 
 `F1 = 2 × (precision × recall) ÷ (precision + recall)`
 (F1 Score is the weighted average of Precision and Recall.)
-
 
 
 ## Summary
