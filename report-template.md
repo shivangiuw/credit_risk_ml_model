@@ -1,30 +1,27 @@
-# Module 12 Report Template
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the 
+Analysis of the performance of machine learning models on original datasets with imbalanced classes vs. on resampled datasets for best predictions.
 
 ## Purpose of the analysis:
 
-To build a logistic regression model that can identify the creditworthiness of borrowers using a dataset of historical lending activity and various techniques to train and evaluate models with imbalanced classes because the healthy loans easily outnumber risky loans.
+Build a logistic regression model that can identify the creditworthiness of borrowers using a dataset of historical lending activity and various techniques to train and evaluate models with imbalanced classes as healthy loans easily outnumber risky loans.
 
-* Explain what financial information the data was on, and what you needed to predict.
+## Data:
 
 The classification model will be built upon the dataset of historical lending activity from a peer-to-peer lending services company with financial information for every loan as mentioned below wherein loan status is the classification column(target):
 
-1. loan_size	
-2. interest_rate	
+1. loan_size
+2. interest_rate
 3. borrower_income
-4. debt_to_income	
-5. num_of_accounts	
-6. derogatory_marks	
+4. debt_to_income
+5. num_of_accounts
+6. derogatory_marks
 7. loan_status
 
-Loan size, interest rate, borrower income, bebt to income ratio, bumber of accounts and derogatory marks are the features(feature variable "X") of the model whereas loan status is target variable("y").
+Loan size, interest rate, borrower income, bebt to income ratio, number of accounts and derogatory marks are the features(feature variable "X") of the model.
 
-Loan status is classified with 0 (healthy loan) and 1 (high-risk loan) labels and will be predicted with the same labels.
+Loan status is target variable("y"), classified with 0 (healthy loan) and 1 (high-risk loan) labels and will be predicted with the same labels.
 
 * Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
 The target variable "y"(loan_status) is an imbalanced classes with following value counts:
@@ -65,31 +62,80 @@ The analysis and the classification will be done first using logistics regressio
 2. confusion matrix 
 3. classification report
 
+## Evaluation metrics:
+
+`Confusion Matrix`
+
+
+
+
+`accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)`
+(The accuracy measures how often the model was correct.)
+
+`precision = TPs ÷ (TPs + FPs)`
+(The precision, also known as the positive predictive value (PPV), measures how confident we are that the model correctly made the positive predictions.)
+
+`recall = TPs / (TPs + FNs)`
+(The recall measures the number of actually fraudulent transactions that the model correctly classified as fraudulent.)
+
+`F1 = 2 × (precision × recall) ÷ (precision + recall)`
+(F1 Score is the weighted average of Precision and Recall.)
+
+
+
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
 * Machine Learning Model 1:
+
+  * Balanced accuracy score:
+    0.9520479254722232
+    
+  * Confusion Matrix:
+       [18663,   102],
+       [   56,   563]
+
   * Description of Model 1 Accuracy, Precision, and Recall scores.
 
-  pre       rec       spe        f1       geo       iba       sup
+                   pre       rec       spe        f1       geo       iba       sup
 
           0       1.00      0.99      0.91      1.00      0.95      0.91     18765
           1       0.85      0.91      0.99      0.88      0.95      0.90       619
 
 avg / total       0.99      0.99      0.91      0.99      0.95      0.91     19384
 
-
-
 * Machine Learning Model 2:
+  
+   * Balanced accuracy score:
+     0.9936781215845847
+ 
+   * Confusion Matrix:
+       [18649,   116],
+       [    4,   615]
+
   * Description of Model 2 Accuracy, Precision, and Recall scores.
- pre       rec       spe        f1       geo       iba       sup
+  
+                   pre       rec       spe        f1       geo       iba       sup
 
           0       1.00      0.99      0.99      1.00      0.99      0.99     18765
           1       0.84      0.99      0.99      0.91      0.99      0.99       619
 
 avg / total       0.99      0.99      0.99      0.99      0.99      0.99     19384
+
+## Evaluation metrics:
+
+`accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)`
+(The accuracy measures how often the model was correct.)
+
+`precision = TPs ÷ (TPs + FPs)`
+(The precision, also known as the positive predictive value (PPV), measures how confident we are that the model correctly made the positive predictions.)
+
+`recall = TPs / (TPs + FNs)`
+(The recall measures the number of actually fraudulent transactions that the model correctly classified as fraudulent.)
+
+`F1 = 2 × (precision × recall) ÷ (precision + recall)`
+(F1 Score is the weighted average of Precision and Recall.)
+
 
 
 ## Summary
