@@ -4,11 +4,67 @@
 
 In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
 
-* Explain the purpose of the analysis.
+* Explain the 
+
+## Purpose of the analysis:
+
+To build a logistic regression model that can identify the creditworthiness of borrowers using a dataset of historical lending activity and various techniques to train and evaluate models with imbalanced classes because the healthy loans easily outnumber risky loans.
+
 * Explain what financial information the data was on, and what you needed to predict.
+
+The classification model will be built upon the dataset of historical lending activity from a peer-to-peer lending services company with financial information for every loan as mentioned below wherein loan status is the classification column(target):
+
+1. loan_size	
+2. interest_rate	
+3. borrower_income
+4. debt_to_income	
+5. num_of_accounts	
+6. derogatory_marks	
+7. loan_status
+
+Loan size, interest rate, borrower income, bebt to income ratio, bumber of accounts and derogatory marks are the features(feature variable "X") of the model whereas loan status is target variable("y").
+
+Loan status is classified with 0 (healthy loan) and 1 (high-risk loan) labels and will be predicted with the same labels.
+
 * Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+The target variable "y"(loan_status) is an imbalanced classes with following value counts:
+* "0" (healthy loan) - 75036
+* "1" (high-risk loan)- 2500
+Hence the class is dominated by "0" which makes it difficult for the model to accurately predict the minority class "1".
+
+
+The analysis and the classification will be done first using logistics regression model on the original dataset with imbalanced target class and then on the resampled dataset using RandomOverSampler module form imbalanced-learn. 
+
+## Steps followed in the machine learning process:
+
+### 1. Split the Data
+- Split the features variable data `"X"` and Target variable `"y"` into Training `(X_train, y_train)` and Testing Sets`(X_test, y_test)` using `test_train_split` function.
+
+
+### 2. Create a Logistic Regression Model with the Original Data
+
+- Instantiate the `Logistic Regression model` 
+- Fit a logistic regression model by using the training data train the model on X_train and y_train `(imbalanced)` datasets wherein y_train has following value counts: "0"- 56271, "1"-  1881 .
+- Save the predictions ("y") on the testing data labels by using the testing feature data (X_test) and the fitted model.
+- Evaluate the `model’s performance` by following:
+1. accuracy score of the model 
+2. confusion matrix 
+3. classification report
+
+
+### 3. Predict a Logistic Regression Model with Resampled Training Data
+
+- Use the `RandomOverSampler` module from the `imbalanced-learn library` to resample the data.
+1. Instantiate the random oversampler model
+2. Fit the original training data to the random_oversampler model to get new variable datasets as `X_resampled, y_resampled` from train datasets `X_train, y_train`.
+3. Confirm that value counts of the labels have an equal number of data points now i.e. "0"- 56271, "1 "- 56271.
+
+- Use the LogisticRegression classifier and the resampled data(X_resampled, y_resampled) to fit the model and make predictions on X_test.
+- Evaluate the model’s performance by doing the following:
+1. accuracy score of the model 
+2. confusion matrix 
+3. classification report
+
 
 ## Results
 
@@ -17,10 +73,24 @@ Using bulleted lists, describe the balanced accuracy scores and the precision an
 * Machine Learning Model 1:
   * Description of Model 1 Accuracy, Precision, and Recall scores.
 
+  pre       rec       spe        f1       geo       iba       sup
+
+          0       1.00      0.99      0.91      1.00      0.95      0.91     18765
+          1       0.85      0.91      0.99      0.88      0.95      0.90       619
+
+avg / total       0.99      0.99      0.91      0.99      0.95      0.91     19384
+
 
 
 * Machine Learning Model 2:
   * Description of Model 2 Accuracy, Precision, and Recall scores.
+ pre       rec       spe        f1       geo       iba       sup
+
+          0       1.00      0.99      0.99      1.00      0.99      0.99     18765
+          1       0.84      0.99      0.99      0.91      0.99      0.99       619
+
+avg / total       0.99      0.99      0.99      0.99      0.99      0.99     19384
+
 
 ## Summary
 
