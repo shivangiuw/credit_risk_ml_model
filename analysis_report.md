@@ -102,28 +102,29 @@ avg / total       0.99      0.99      0.99      0.99      0.99      0.99     193
 
 ## Evaluation metrics:
 
-` Balanced accuracy score`: Balanced accuracy is a metric that one can use when evaluating how good a binary classifier is. It is especially useful when the classes are imbalanced, i.e. one of the two classes appears a lot more often than the other.
+* ` Balanced accuracy score`: Balanced accuracy is a metric that one can use when evaluating how good a binary classifier is. It is especially useful when the classes are imbalanced, i.e. one of the two classes appears a lot more often than the other.
 
 
-`Confusion Matrix`
+* `Confusion Matrix`
 
+![](Images/confusion_matrix.png)
 
-`accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)`
+* `accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)`
 (The accuracy measures how often the model was correct.)
 
-`precision = TPs ÷ (TPs + FPs)`
+* `precision = TPs ÷ (TPs + FPs)`
 (The precision, also known as the positive predictive value (PPV), measures how confident we are that the model correctly made the positive predictions.)
 
-`recall = TPs / (TPs + FNs)`
+* `recall = TPs / (TPs + FNs)`
 (The recall measures the number of actually fraudulent transactions that the model correctly classified as fraudulent.)
 
-`F1 = 2 × (precision × recall) ÷ (precision + recall)`
+* `F1 = 2 × (precision × recall) ÷ (precision + recall)`
 (F1 Score is the weighted average of Precision and Recall.)
 
 
 ## Summary
 
-In the mentioned scenario, it is more important to correctly classify high risk loans(1s) than healthy loans to avoid them. Also to `avoid high risk loans`, it is essential to avoid False negatives for `1s`. Hence, we should focus on the metrics considering `false negatives` more and choose the model which brings down the false negatives.
+In the mentioned scenario, it is more important to correctly classify high risk loans(1s) than healthy loans to avoid them. Wrongly classifying high risk loans as healthy loans can be costlier to a lender than wrongly classifying healthy loans as high risk loans. So, to `avoid high risk loans`, it is essential to avoid False negatives for `1s`. Hence, we should focus on the metrics considering `false negatives` more and choose the model which brings down the false negatives.
 
                     pre       rec       spe        f1       geo       iba       sup
    (model 1)  0    1.00      0.99      0.91      1.00      0.95      0.91     18765
