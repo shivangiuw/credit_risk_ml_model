@@ -145,7 +145,8 @@ For healthy loans (0), all the metrics have improved with model trained with res
 
 * Although `precision` dropped a little from 0.85 to 0.84 which seems tolerable with improvements in all other scores.
 
-In view of the above, model 2 i.e. logistic regression model trained with resampled data performs better than model 1 trained on data with imbalanced class, as it not only predicts healthy loans better but also works better at avoiding at wrongly classifying the high risk loans as healthy loans. 
+
+#### In view of the above, model 2 i.e. logistic regression model trained with resampled data performs better than model 1 trained on data with imbalanced class, as it not only predicts healthy loans better but also works better at avoiding at wrongly classifying the high risk loans as healthy loans. 
 
 
 
