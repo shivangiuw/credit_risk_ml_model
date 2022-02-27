@@ -125,15 +125,17 @@ avg / total       0.99      0.99      0.99      0.99      0.99      0.99     193
 
 In the mentioned scenario, it is more important to correctly classify high risk loans(1s) than healthy loans to avoid them. Also to `avoid high risk loans`, it is essential to avoid False negatives for `1s`. Hence, we should focus on the metrics considering `false negatives` more and choose the model which brings down the false negatives.
 
-                  pre       rec       spe        f1       geo       iba       sup
- (model 1)  0    1.00      0.99      0.91      1.00      0.95      0.91     18765
- (model 2)  0    1.00      0.99      0.99      1.00      0.99      0.99     18765
+                    pre       rec       spe        f1       geo       iba       sup
+   (model 1)  0    1.00      0.99      0.91      1.00      0.95      0.91     18765
+   
+   (model 2)  0    1.00      0.99      0.99      1.00      0.99      0.99     18765
 
 For healthy loans (0), all the metrics have improved with model trained with resampled data.
 
-                   pre       rec       spe        f1       geo       iba    sup
-(model 1) 1       0.85      0.91      0.99      0.88      0.95      0.90    619
-(model 2) 1       0.84      0.99      0.99      0.91      0.99      0.99    619
+                    pre       rec       spe        f1       geo       iba    sup
+  (model 1) 1       0.85      0.91      0.99      0.88      0.95      0.90    619
+  
+  (model 2) 1       0.84      0.99      0.99      0.91      0.99      0.99    619
  
 * The `balanced accuracy` has improved radically  from 0.95 to 0.99 after training the Logistic regression model on resampled   dataset and predicting the target class.
 
